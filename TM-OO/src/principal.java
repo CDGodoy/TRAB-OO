@@ -40,9 +40,9 @@ public class principal {
 	        	area.calculando();
 	            break;
 	        case 2: //___________________________________________ Opcao 2 do Menu
-	    		System.out.print("===============\n");
+	    		System.out.print("=====================\n");
 	        	System.out.print("   (1) Distância \n");
-	        	System.out.print("===============\n");
+	        	System.out.print("=====================\n");
 	    		System.out.println("Okay, vamos converter uma medida de distância.");
 	    		
 	    		System.out.println("Qual unidade de medida você utilizou?");
@@ -61,7 +61,7 @@ public class principal {
 	    		cDistancia paraM = new cDistancia(unidade); //Chama o construtor cDistancia na classe cDistancia.java
 	    												// levando junto a unidade escolhida pelo usuario
 	        	double emMetros = paraM.pMetros(medida); //Pede para converter para metros 
-	    		System.out.println(emMetros);
+	    		paraM.dMetros(emMetros);
 	            break;
 	        case 3 : //___________________________________________ Opcao 3 do Menu
 	            break;
