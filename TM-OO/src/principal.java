@@ -11,14 +11,14 @@ public class principal {
 	
 	public static void main(String[] args) {
 		int opcoesMenu;
-		float medida;
+		double medida;
 		do{
 	        System.out.println("============================================");
 	        System.out.println("SEJA BEM VINDO AO SUPER CONVERSOR DE MEDIDAS");
 	        System.out.println("============================================");
 	        
 	        System.out.print("Insira o valor da medida a ser convertida: ");
-	        medida = input.nextFloat();
+	        medida = input.nextDouble();
 	        
 	        System.out.println("Qual tipo de unidade de medida você inseriu? ");
 	        System.out.println("(1) Área");
