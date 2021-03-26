@@ -65,6 +65,7 @@ public class cDistancia {
 	
 	public void dMetros(double medida) { //Método de metros
 		//AQUI CONVERTEMOS DE METROS PARA TODAS AS UNIDADES DE MEDIDAS ACEITAS PELO NOSSO PROGRAMA
+		
 		System.out.println("==========RESULTADOS==========");
 		System.out.println("\nKilômetros: " + (medida/KM_P_MT));
 		System.out.println("\nHectâmetros: " + (medida/HM_P_MT));
