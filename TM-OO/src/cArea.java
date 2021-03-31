@@ -27,7 +27,7 @@ public class cArea {
 		System.out.println(" UM  - Micrometros quadrados");
 		System.out.println(" MM  - Milímetros quadrados");
 		System.out.println(" CM  - Centímetros quadrados");
-		System.out.println(" DM  - Decímetros quadradis");
+		System.out.println(" DM  - Decímetros quadrados");
 		System.out.println("  M  - Metros quadrados");
 		System.out.println(" DAM - Decâmetros quadrados");
 		System.out.println(" HM  - Hectâmetros quadrados");
@@ -42,7 +42,7 @@ public class cArea {
 		System.out.println(" UM  - Micrometros quadrados");
 		System.out.println(" MM  - Milímetros quadrados");
 		System.out.println(" CM  - Centímetros quadrados");
-		System.out.println(" DM  - Decímetros quadradis");
+		System.out.println(" DM  - Decímetros quadrados");
 		System.out.println("  M  - Metros quadrados");
 		System.out.println(" DAM - Decâmetros quadrados");
 		System.out.println(" HM  - Hectâmetros quadrados");
