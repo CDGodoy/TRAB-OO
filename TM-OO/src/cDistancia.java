@@ -33,6 +33,9 @@ public class cDistancia {
 		if(unidade.equals("DM")) {
 			fator = DM_P_MT;
 		}
+		if (unidade.equals("M")) {
+			fator = 1;
+		}
 		if(unidade.equals("CM")) {
 			fator = CM_P_MT;
 		}
@@ -63,23 +66,9 @@ public class cDistancia {
 		return (medida * fator); //AQUI CONVERTEMOS O VALOR INSERIDO POR ELE PARA METROS
 	}
 	
-	public void dMetros(double medida) { //Método de metros
+	public double dMetros(double medida) { //Método de metros
 		//AQUI CONVERTEMOS DE METROS PARA TODAS AS UNIDADES DE MEDIDAS ACEITAS PELO NOSSO PROGRAMA
-		
-		System.out.println("==========RESULTADOS==========");
-		System.out.println("\nKilômetros: " + (medida/KM_P_MT));
-		System.out.println("\nHectâmetros: " + (medida/HM_P_MT));
-		System.out.println("\nDecâmetros: " + (medida/DAM_P_MT));
-		System.out.println("\nmetros: " + medida);
-		System.out.println("\nDecimetros: " + (medida/DM_P_MT));
-		System.out.println("\nCentimetros: " + (medida/CM_P_MT));
-		System.out.println("\nMilimetros: " + (medida/MM_P_MT));
-		System.out.println("\nMicrometros: " + (medida/UM_P_MT));
-		System.out.println("\nMilhas: " + (medida/ML_P_MT));
-		System.out.println("\nJardas: " + (medida/JD_P_MT));
-		System.out.println("\nPés: " + (medida/PE_P_MT));
-		System.out.println("\nPolegadas: " + (medida/PL_P_MT));
-		System.out.println("\nAnos luz: " + (medida/AL_P_MT));
+		return (medida/fator);
 		
 	}
 	

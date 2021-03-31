@@ -59,9 +59,30 @@ public class principal {
 	    		String unidade = input.nextLine().toUpperCase().trim(); //Recebe a medida do usuário e deixa em maiúsculo
 	    		
 	    		cDistancia paraM = new cDistancia(unidade); //Chama o construtor cDistancia na classe cDistancia.java
-	    												// levando junto a unidade escolhida pelo usuario
-	        	double emMetros = paraM.pMetros(medida); //Pede para converter para metros 
-	    		paraM.dMetros(emMetros);
+	    													// levando junto a unidade escolhida pelo usuario
+	    		double emMetros = paraM.pMetros(medida); //Pede para converter para metros											
+	    		
+	    		
+	    		
+	    		System.out.println("Qual unidade de medida você deseja?");
+	    		System.out.println(" UM  - Micrometro");
+	    		System.out.println(" MM  - Milímetro");
+	    		System.out.println(" CM  - Centímetro");
+	    		System.out.println(" DM  - Decímetro");
+	    		System.out.println("  M  - Metro");
+	    		System.out.println(" DAM - Decâmetro");
+	    		System.out.println(" HM  - Hectâmetro");
+	    		System.out.println(" KM  - Quilômetros");
+	    		System.out.println(" AL  - Anos Luz");
+	    		System.out.print("Insira a opção escolhida: ");											
+	    		unidade = input.nextLine().toUpperCase().trim(); //Recebe a medida do usuário e deixa em maiúsculo
+	    		
+	    		cDistancia deM = new cDistancia(unidade);
+	        	
+	    		double mfinal = deM.dMetros(emMetros);
+	    		
+	    		System.out.println(mfinal);
+	    		
 	            break;
 	        case 3 : //___________________________________________ Opcao 3 do Menu
 	            break;
