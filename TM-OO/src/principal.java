@@ -4,7 +4,7 @@ public class principal {
 	static Scanner input = new Scanner(System.in);
 	
 	static cArea area = new cArea();
-	
+	static ProgramMenu menu = new ProgramMenu();
 	//static cMassa massa = new cMassa();
 	//static cTemperatura temperatura = new cTemperatura();
 	//static cVolume volume = new cVolume();
@@ -12,32 +12,21 @@ public class principal {
 	public static void main(String[] args) {
 		int opcoesMenu;
 		double medida;
+		String unidade;
 		do{
-	        System.out.println("============================================");
-	        System.out.println("SEJA BEM VINDO AO SUPER CONVERSOR DE MEDIDAS");
-	        System.out.println("============================================");
-	        
-	        System.out.print("Insira o valor da medida a ser convertida: ");
-	        medida = input.nextDouble();
-	        
-	        System.out.println("Qual tipo de unidade de medida você inseriu? ");
-	        System.out.println("(1) Área");
-	        System.out.println("(2) Distância");
-	        System.out.println("(3) Massa");
-	        System.out.println("(4) Volume");
-	        System.out.println("(5) Temperatura");
-	        System.out.println("(6) Finalizar programa");
+			menu.InsMedida(); //Chamando exibição de inserção de medida
+			medida = input.nextDouble();
+			menu.TypeSelect();//Chamando exibição de inserção de tipo medida
 	        opcoesMenu = input.nextInt();
 	        input.nextLine(); //Limpar Buffer do teclado
 	        while((opcoesMenu < 1) || (opcoesMenu > 6)){
-	        	System.out.print("Por favor, escolha uma das opcoes(1 a 6).\n");
-	        	System.out.print("Qual tipo de unidade de medida você inseriu? ");
+	        	menu.ErroMenu();
 	        	opcoesMenu = input.nextInt();
 	        }
 
 	        switch(opcoesMenu){
 	        case 1 : //___________________________________________ Opcao 1 do Menu
-	        	area.calculando();
+	        	area.calculando(medida);
 	            break;
 	        case 2: //___________________________________________ Opcao 2 do Menu
 	    		System.out.print("=====================\n");
@@ -56,13 +45,10 @@ public class principal {
 	    		System.out.println(" KM  - Quilômetros");
 	    		System.out.println(" AL  - Anos Luz");
 	    		System.out.print("Insira a opção escolhida: ");
-	    		String unidade = input.nextLine().toUpperCase().trim(); //Recebe a medida do usuário e deixa em maiúsculo
+	    		unidade = input.nextLine().toUpperCase().trim(); //Recebe a medida do usuário e deixa em maiúsculo
 	    		
 	    		cDistancia paraM = new cDistancia(unidade); //Chama o construtor cDistancia na classe cDistancia.java
-	    													// levando junto a unidade escolhida pelo usuario
 	    		double emMetros = paraM.pMetros(medida); //Pede para converter para metros											
-	    		
-	    		
 	    		
 	    		System.out.println("Qual unidade de medida você deseja?");
 	    		System.out.println(" UM  - Micrometro");
@@ -78,7 +64,6 @@ public class principal {
 	    		unidade = input.nextLine().toUpperCase().trim(); //Recebe a medida do usuário e deixa em maiúsculo
 	    		
 	    		cDistancia deM = new cDistancia(unidade);
-	        	
 	    		double mfinal = deM.dMetros(emMetros);
 	    		
 	    		System.out.println(mfinal);

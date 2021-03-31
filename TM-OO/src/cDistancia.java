@@ -4,7 +4,6 @@ public class cDistancia {
 
 	static Scanner input = new Scanner(System.in);
 	//DEFININDO UNIDADES
-	//Elas estão públicas pois 
 	final public double KM_P_MT = 1000; //KILOMETRO
 	final public double HM_P_MT = 100; //HECTAMETRO
 	final public double DAM_P_MT = 10; //DECAMETRO
