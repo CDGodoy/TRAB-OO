@@ -20,6 +20,20 @@ public class ProgramMenu {
     	System.out.print("Por favor, escolha uma das opcoes(1 a 6).\n");
     	System.out.print("Qual tipo de unidade de medida você inseriu? ");
 	}
+	public void FinalMenu() {
+    	System.out.print("============================\n");
+    	System.out.print("   (6) Finalizar programa. \n");
+    	System.out.print("============================\n");
+    	System.out.print("Programa terminado. \n");
+    	System.out.print("Obrigado por utilizá-lo. :D \n");
+    	System.out.print("\n");
+    	System.out.print("________________________________________\n");
+    	System.out.print("|            Copyright 2021            |\n");
+    	System.out.print("|        by Carlos Daniel Godoy        |\n");
+    	System.out.print("|      & Jose Luis Ramos Teixeira      |\n");
+    	System.out.print("________________________________________\n");
+    	System.out.print("\n");
+	}
 }
 
 

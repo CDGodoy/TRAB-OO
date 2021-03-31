@@ -2,8 +2,7 @@ import java.util.Scanner;
 
 public class cArea {
 	
-	String unidade;
-	String fUnidade;
+	String unidade, fUnidade;
 	Scanner input = new Scanner(System.in);
 	
 	//DEFININDO UNIDADES
