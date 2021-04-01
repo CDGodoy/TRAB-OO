@@ -22,7 +22,7 @@ public class cVolume {
 		System.out.println("  M  - Metros cúbicos");
 		System.out.println(" DAM - Decâmetros cúbicos");
 		System.out.println(" HM  - Hectâmetros cúbicos");
-		System.out.println(" KM  - Quilômetros cúbicos");
+		System.out.println(" KG  - Quilômetros cúbicos");
 		System.out.print("Insira a opção escolhida: ");
 		unidade = input.nextLine().toUpperCase().trim(); //Recebe a medida do usuário e deixa em maiúsculo
 		

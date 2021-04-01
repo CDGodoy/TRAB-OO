@@ -8,14 +8,13 @@ public class principal {
 	static cArea area = new cArea();
 	static ProgramMenu menu = new ProgramMenu();
 	static cVolume volume = new cVolume();
-	//static cMassa massa = new cMassa();
-	//static cTemperatura temperatura = new cTemperatura();
+	static cMassa massa = new cMassa();
+	static cTemperatura temperatura = new cTemperatura();
 
 	
 	public static void main(String[] args) {
 		int opcoesMenu;
 		double medida;
-		String unidade;
 		do{
 			menu.InsMedida(); //Chamando exibição de inserção de medida
 			medida = input.nextDouble();
@@ -35,12 +34,14 @@ public class principal {
 	    		dist.calculando(medida);
 	            break;
 	        case 3 : //___________________________________________ Opcao 3 do Menu
+	        	massa.calculando(medida);
 	            break;
 	        case 4 : //___________________________________________ Opcao 4 do Menu
 	        	volume.calculando(medida);
 	            break;
 	        case 5 : //___________________________________________ Opcao 5 do Menu
-	            break;
+	            temperatura.calculando(medida);
+	        	break;
 	        case 6 : //___________________________________________ Opcao 6 do Menu
 	        	menu.FinalMenu();
 	            break;

@@ -34,28 +34,51 @@ public class Calculos {
 	public double dMetros(double medida, double fator) {
 		return (medida/fator);
 	}
-	
+	public double CTPC (String unidade, double medida) {
+		if(unidade.equals("C")) {
+			return medida;
+		}
+		if(unidade.equals("F")) {
+			return ((medida-32)/1.8);
+		}
+		if(unidade.equals("K")) {
+			return medida-273.15;
+		}
+		return 0;
+	}
+	public double CTDC (String unidade, double medida) {
+		if(unidade.equals("C")) {
+			return medida;
+		}
+		if(unidade.equals("F")) {
+			return 1.8*medida+32;
+		}
+		if(unidade.equals("K")) {
+			return medida+273.15;
+		}
+		return 0;
+	}
 	
 	public double UMedida (String unidade) {
-		if(unidade.equals("KM")) {
+		if(unidade.equals("KM") || unidade.equals("KG")) {
 			return KM_P_MT;
 		}
-		if(unidade.equals("HM")) {
+		if(unidade.equals("HM") || unidade.equals("HG")) {
 			return HM_P_MT;
 		}
-		if(unidade.equals("DAM")) {
+		if(unidade.equals("DAM") || unidade.equals("DAG")) {
 			return DAM_P_MT;
 		}
-		if(unidade.equals("DM")) {
-			return DM_P_MT;
-		}
-		if(unidade.equals("M")) {
+		if(unidade.equals("M") || unidade.equals("G")) {
 			return 1;
 		}
-		if(unidade.equals("CM")) {
+		if(unidade.equals("DM") || unidade.equals("DG")) {
+			return DM_P_MT;
+		}
+		if(unidade.equals("CM") || unidade.equals("CG")) {
 			return CM_P_MT;
 		}
-		if(unidade.equals("MM")) {
+		if(unidade.equals("MM") || unidade.equals("MG")) {
 			return MM_P_MT;
 		}
 		if(unidade.equals("UM")) {
