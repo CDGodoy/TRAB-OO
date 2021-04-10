@@ -1,3 +1,4 @@
+package com.scm.back;
 
 public class ProgramMenu {
 		
@@ -8,9 +9,9 @@ public class ProgramMenu {
 		System.out.print("Insira o valor da medida a ser convertida: ");
 	}
 	public void TypeSelect() {
-		System.out.println("Qual tipo de unidade de medida vocÍ inseriu? ");
-		System.out.println("(1) ¡rea");
-		System.out.println("(2) Dist‚ncia");
+		System.out.println("Qual tipo de unidade de medida voc√™ inseriu? ");
+		System.out.println("(1) √Årea");
+		System.out.println("(2) Dist√¢ncia");
 		System.out.println("(3) Massa");
 		System.out.println("(4) Volume");
 		System.out.println("(5) Temperatura");
@@ -18,14 +19,14 @@ public class ProgramMenu {
 	}
 	public void ErroMenu() {
     	System.out.print("Por favor, escolha uma das opcoes(1 a 6).\n");
-    	System.out.print("Qual tipo de unidade de medida vocÍ inseriu? ");
+    	System.out.print("Qual tipo de unidade de medida voc√™ inseriu? ");
 	}
 	public void FinalMenu() {
     	System.out.print("============================\n");
     	System.out.print("   (6) Finalizar programa. \n");
     	System.out.print("============================\n");
     	System.out.print("Programa terminado. \n");
-    	System.out.print("Obrigado por utiliz·-lo. :D \n");
+    	System.out.print("Obrigado por utiliz√°-lo. :D \n");
     	System.out.print("\n");
     	System.out.print("________________________________________\n");
     	System.out.print("|            Copyright 2021            |\n");
@@ -35,7 +36,5 @@ public class ProgramMenu {
     	System.out.print("\n");
 	}
 }
-
-
 
 

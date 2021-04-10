@@ -1,3 +1,4 @@
+package com.scm.back;
 import java.util.Scanner; //leitura de dados
 
 public class principal {
@@ -16,9 +17,9 @@ public class principal {
 		int opcoesMenu;
 		double medida;
 		do{
-			menu.InsMedida(); //Chamando exibição de inserção de medida
+			menu.InsMedida(); //Chamando exibiÃ§Ã£o de inserÃ§Ã£o de medida
 			medida = input.nextDouble();
-			menu.TypeSelect();//Chamando exibição de inserção de tipo medida
+			menu.TypeSelect();//Chamando exibiÃ§Ã£o de inserÃ§Ã£o de tipo medida
 	        opcoesMenu = input.nextInt();
 	        input.nextLine(); //Limpar Buffer do teclado
 	        while((opcoesMenu < 1) || (opcoesMenu > 6)){

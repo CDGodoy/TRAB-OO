@@ -1,3 +1,4 @@
+package com.scm.back;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
@@ -13,7 +14,7 @@ public class Calculos {
 	final public double UM_P_MT = 0.0001; //MICROMETRO
 	final public double ML_P_MT = 1609.344; //MILHA
 	final public double JD_P_MT = 0.9144; //JARDAS
-	final public double PE_P_MT = 0.3048; //PES (FIFA … MELHOR)
+	final public double PE_P_MT = 0.3048; //PES (FIFA √â MELHOR)
 	final public double PL_P_MT = 0.0254; //POLEGADAS
 	final public double AL_P_MT = 94605284*(Math.pow(10,15)); //ANOS LUZ
 	
@@ -105,28 +106,28 @@ public class Calculos {
 	
 	public String UName(String unidade) {
 		if(unidade.equals("KM")) {
-			return "KilÙmetros";
+			return "Kil√¥metros";
 		}
 		if(unidade.equals("HM")) {
-			return "Hect‚metros";
+			return "Hect√¢metros";
 		}
 		if(unidade.equals("DAM")) {
-			return "Dec‚metros";
+			return "Dec√¢metros";
 		}
 		if(unidade.equals("M")) {
 			return "Metros";
 		}
 		if(unidade.equals("DM")) {
-			return "DecÌmetros";
+			return "Dec√≠metros";
 		}
 		if(unidade.equals("CM")) {
-			return "CentrÌmetros";
+			return "Centr√≠metros";
 		}
 		if(unidade.equals("MM")) {
-			return "MilÌmetros";
+			return "Mil√≠metros";
 		}
 		if(unidade.equals("UM")) {
-			return "MicrÙmetros";
+			return "Micr√¥metros";
 		}
 		if(unidade.equals("ML")) {
 			return "Milhas";
@@ -135,7 +136,7 @@ public class Calculos {
 			return "Jardas";
 		}
 		if(unidade.equals("PE")) {
-			return "PÈs";
+			return "P√©s";
 		}
 		if(unidade.equals("PL")) {
 			return "Polegadas";
@@ -148,4 +149,3 @@ public class Calculos {
 	}
 	
 }
-
