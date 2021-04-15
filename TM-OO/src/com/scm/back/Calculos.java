@@ -20,7 +20,7 @@ public class Calculos {
 	
 
 	public String arredondar(double medida) { //Classe de arredondamento
-		DecimalFormat df = new DecimalFormat("0.00000");
+		DecimalFormat df = new DecimalFormat("0.00000000000000");
 		df.setRoundingMode(RoundingMode.HALF_UP);
 		
 		return df.format(medida);
@@ -61,43 +61,43 @@ public class Calculos {
 	}
 	
 	public double UMedida (String unidade) {
-		if(unidade.equals("KM") || unidade.equals("KG")) {
+		if(unidade.equals("KM-Quilometros") || unidade.equals("KG")) {
 			return KM_P_MT;
 		}
-		if(unidade.equals("HM") || unidade.equals("HG")) {
+		if(unidade.equals("HM-Hectametros") || unidade.equals("HG")) {
 			return HM_P_MT;
 		}
-		if(unidade.equals("DAM") || unidade.equals("DAG")) {
+		if(unidade.equals("DAM-Decametros") || unidade.equals("DAG")) {
 			return DAM_P_MT;
 		}
-		if(unidade.equals("M") || unidade.equals("G")) {
+		if(unidade.equals("M-Metros") || unidade.equals("G")) {
 			return 1;
 		}
-		if(unidade.equals("DM") || unidade.equals("DG")) {
+		if(unidade.equals("DM-Decimetros") || unidade.equals("DG")) {
 			return DM_P_MT;
 		}
-		if(unidade.equals("CM") || unidade.equals("CG")) {
+		if(unidade.equals("CM-Centimetros") || unidade.equals("CG")) {
 			return CM_P_MT;
 		}
-		if(unidade.equals("MM") || unidade.equals("MG")) {
+		if(unidade.equals("MM-Milimetros") || unidade.equals("MG")) {
 			return MM_P_MT;
 		}
-		if(unidade.equals("UM")) {
+		if(unidade.equals("UM-Micrometros")) {
 			return UM_P_MT;
 		}
-		if(unidade.equals("ML")) {
+		if(unidade.equals("ML-Milhas")) {
 			return ML_P_MT;
 		}
-		if(unidade.equals("JD")) {
+		if(unidade.equals("JD-Jardas")) {
 			return JD_P_MT;
 		}
-		if(unidade.equals("PE")) {
+		if(unidade.equals("PE-Pes")) {
 			return PE_P_MT;
 		}
-		if(unidade.equals("PL")) {
+		if(unidade.equals("PL-Polegadas")) {
 			return PL_P_MT;
 		}
-		if(unidade.equals("AL")) {
+		if(unidade.equals("AL-AnosLuz")) {
 			return AL_P_MT;
 		}
 		
@@ -106,7 +106,7 @@ public class Calculos {
 	
 	public String UName(String unidade) {
 		if(unidade.equals("KM")) {
-			return "Kilômetros";
+			return "kilometros";
 		}
 		if(unidade.equals("HM")) {
 			return "Hectâmetros";
