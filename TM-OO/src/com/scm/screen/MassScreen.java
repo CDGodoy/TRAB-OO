@@ -1,5 +1,6 @@
 package com.scm.screen;
 
+import com.scm.back.Calculos;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -20,13 +21,14 @@ import javax.swing.border.EmptyBorder;
 
 public class MassScreen extends JFrame {
 		private JPanel contentPane;
-		
+		static Calculos calc = new Calculos();
 		private JTextField textFieldO;
 		private JComboBox comboBoxD;
 		private JTextField textFieldD;
 		private JButton converterButton;
 		private JLabel textD;
 		private JLabel titulo;
+		private double fator;
 		/**
 		 * Launch the application.
 		 */
@@ -95,7 +97,20 @@ public class MassScreen extends JFrame {
 			converterButton = new JButton("Converter");//------------------------BOTÃO DE CONVERTER
 			converterButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
-				
+					String arboxO = (String)comboBoxO.getSelectedItem();
+					String arboxD = (String)comboBoxD.getSelectedItem();
+					
+					double medida = Double.parseDouble(textFieldO.getText());
+					
+					fator = calc.UMedida(arboxO);
+					double emMetros = calc.pMetros(medida, fator);
+					
+					fator = calc.UMedida(arboxD);
+					
+					double mFinal = calc.dMetros(emMetros, fator);
+					//System.out.println(mFinal);
+					textFieldD.setText(calc.arredondar(mFinal));
+					
 				}
 			});
 			converterButton.setFont(new Font("Tahoma", Font.BOLD, 16));

@@ -46,7 +46,7 @@ public class cVolume {
 		fator = Math.pow(calc.UMedida(unidade), 3);//Chamando o resultado de UMedida ao cubo
 		
 		double mFinal = calc.dMetros(emMetros, fator); //Calculando de Metros para a unidade desejada
-		fUnidade = calc.UName(unidade);
+
 		System.out.println("Sua medida em "+fUnidade+" cúbicos é: " + calc.arredondar(mFinal));
 		
 	}

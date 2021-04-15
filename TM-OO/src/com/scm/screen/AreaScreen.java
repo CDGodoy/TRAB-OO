@@ -23,8 +23,8 @@ import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 
 public class AreaScreen extends JFrame {
-	//String fUnidade;
-	//static Calculos calc = new Calculos();
+
+	static Calculos calc = new Calculos();
 	private JPanel contentPane;
 	
 	private JTextField textFieldO;
@@ -32,7 +32,7 @@ public class AreaScreen extends JFrame {
 	private JTextField textFieldD;
 	private JButton converterButton;
 	private JLabel textD;
-	//private double fator;
+	private double fator;
 	private JLabel titulo;
 	/**
 	 * Launch the application.
@@ -100,19 +100,19 @@ public class AreaScreen extends JFrame {
 		converterButton = new JButton("Converter");//------------------------BOTÃO DE CONVERTER
 		converterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//String arboxO = (String)comboBoxAreaO.getSelectedItem();
-				//String arboxD = (String)comboBoxAreaD.getSelectedItem();
+				String arboxO = (String)comboBoxO.getSelectedItem();
+				String arboxD = (String)comboBoxD.getSelectedItem();
 				
-				//double medida = Double.parseDouble(textFieldAreaO.getText());
+				double medida = Double.parseDouble(textFieldO.getText());
 				
-				//fator = Math.pow(calc.UMedida(arboxO), 2);
-				//double emMetros = calc.pMetros(medida, fator);
+				fator = Math.pow(calc.UMedida(arboxO), 2);
+				double emMetros = calc.pMetros(medida, fator);
 				
-				//fator = Math.pow(calc.UMedida(arboxD), 2);
+				fator = Math.pow(calc.UMedida(arboxD), 2);
 				
-				//double mFinal = calc.dMetros(emMetros, fator);
+				double mFinal = calc.dMetros(emMetros, fator);
 				//System.out.println(mFinal);
-				//textFieldAreaD.setText(calc.arredondar(mFinal));
+				textFieldD.setText(calc.arredondar(mFinal));
 				//String resultado = String.format("%f", mFinal);
 				//textFieldAreaD.setText(String.valueOf(mFinal));
 				//double leitura = Double.parseDouble(textFieldAreaO.getText());

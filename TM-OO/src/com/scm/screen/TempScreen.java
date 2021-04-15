@@ -1,5 +1,7 @@
 package com.scm.screen;
 
+import com.scm.back.Calculos;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -21,12 +23,15 @@ import javax.swing.border.EmptyBorder;
 public class TempScreen extends JFrame {
 	private JPanel contentPane;
 	
+	static Calculos calc = new Calculos();
+	
 	private JTextField textFieldO;
 	private JComboBox comboBoxD;
 	private JTextField textFieldD;
 	private JButton converterButton;
 	private JLabel textD;
 	private JLabel titulo;
+	private double fator;
 	/**
 	 * Launch the application.
 	 */
@@ -66,13 +71,13 @@ public class TempScreen extends JFrame {
 		JComboBox comboBoxO = new JComboBox();
 		comboBoxO.setMaximumRowCount(3);
 		comboBoxO.setFont(new Font("Tahoma", Font.BOLD, 16));
-		comboBoxO.setModel(new DefaultComboBoxModel(new String[] {"C\u00BA - Celsius", "K\u00BA - Kelvin", "F\u00BA - Fahrenheit"}));
+		comboBoxO.setModel(new DefaultComboBoxModel(new String[] {"°C - Celsius", "K - Kelvin", "°F - Fahrenheit"}));
 		comboBoxO.setBounds(50, 130, 320, 40);
 		contentPane.add(comboBoxO);
 		
 		comboBoxD = new JComboBox();
 		comboBoxD.setFont(new Font("Tahoma", Font.BOLD, 16));
-		comboBoxD.setModel(new DefaultComboBoxModel(new String[] {"C\u00BA - Celsius", "K\u00BA - Kelvin", "F\u00BA - Fahrenheit"}));
+		comboBoxD.setModel(new DefaultComboBoxModel(new String[] {"°C - Celsius", "K - Kelvin", "°F - Fahrenheit"}));
 		comboBoxD.setBounds(50, 280, 320, 40);
 		contentPane.add(comboBoxD);
 		
@@ -94,7 +99,21 @@ public class TempScreen extends JFrame {
 		converterButton = new JButton("Converter");//------------------------BOTÃO DE CONVERTER
 		converterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				
+				String tpboxO = (String)comboBoxO.getSelectedItem(); //Obtendo dados
+				String tpboxD = (String)comboBoxD.getSelectedItem();
+				double medida = Double.parseDouble(textFieldO.getText());
+				
+				System.out.println(tpboxO + "\n");
+				System.out.println(tpboxD + "\n");
+				double emCelsius = calc.CTPC(tpboxO, medida); //Passando para celsius
+				System.out.println(emCelsius + "\n");
+				
+				double tempFinal = calc.CTDC(tpboxD, emCelsius);
+				System.out.println(tempFinal + "\n");
+				
+				//System.out.println(tempFinal);
+				textFieldD.setText(calc.arredondar(tempFinal));
 			}
 		});
 		converterButton.setFont(new Font("Tahoma", Font.BOLD, 16));

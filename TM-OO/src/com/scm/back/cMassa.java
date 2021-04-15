@@ -45,8 +45,6 @@ public class cMassa {
 		
 		double mFinal = calc.dMetros(emMetros, fator);
 		
-		fUnidade = calc.UName(unidade);
-		
 		System.out.println("Sua medida em "+fUnidade+" é: " + calc.arredondar(mFinal));
 		
 	}

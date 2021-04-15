@@ -20,7 +20,7 @@ public class Calculos {
 	
 
 	public String arredondar(double medida) { //Classe de arredondamento
-		DecimalFormat df = new DecimalFormat("0.00000000000000");
+		DecimalFormat df = new DecimalFormat("0.00000");//000000000");
 		df.setRoundingMode(RoundingMode.HALF_UP);
 		
 		return df.format(medida);
@@ -36,53 +36,55 @@ public class Calculos {
 		return (medida/fator);
 	}
 	public double CTPC (String unidade, double medida) {
-		if(unidade.equals("C")) {
+		if(unidade.equals("∞C - Celsius")) {
+			System.out.println(medida);
 			return medida;
 		}
-		if(unidade.equals("F")) {
+		if(unidade.equals("∞F - Fahrenheit")) {
 			return ((medida-32)/1.8);
 		}
-		if(unidade.equals("K")) {
+		if(unidade.equals("K - Kelvin")) {
 			return medida-273.15;
 		}
 		return 0;
 	}
 	public double CTDC (String unidade, double medida) {
-		if(unidade.equals("C")) {
+		if(unidade.equals("∞C - Celsius")) {
+			System.out.println("aa"+medida);
 			return medida;
 		}
-		if(unidade.equals("F")) {
+		if(unidade.equals("∞F - Fahrenheit")) {
 			return 1.8*medida+32;
 		}
-		if(unidade.equals("K")) {
+		if(unidade.equals("K - Kelvin")) {
 			return medida+273.15;
 		}
 		return 0;
 	}
 	
 	public double UMedida (String unidade) {
-		if(unidade.equals("KM-Quilometros") || unidade.equals("KG")) {
+		if(unidade.equals("KM-Quilometros") || unidade.equals("KM-Quilometros quadrados") || unidade.equals("KM-Quilometros cubicos") || unidade.contentEquals("kg - Quilogramas")) {
 			return KM_P_MT;
 		}
-		if(unidade.equals("HM-Hectametros") || unidade.equals("HG")) {
+		if(unidade.equals("HM-Hectametros") || unidade.equals("HM-Hectametros quadrados") || unidade.equals("HM-Hectametros cubicos") || unidade.contentEquals("hg - Hectogramas") ) {
 			return HM_P_MT;
 		}
-		if(unidade.equals("DAM-Decametros") || unidade.equals("DAG")) {
+		if(unidade.equals("DAM-Decametros") || unidade.equals("DAM-Decametros quadrados") || unidade.equals("DAM-Decametros cubicos") || unidade.contentEquals("dag - Decagramas") ) {
 			return DAM_P_MT;
 		}
-		if(unidade.equals("M-Metros") || unidade.equals("G")) {
+		if(unidade.equals("M-Metros") || unidade.equals("M-Metros quadrados") || unidade.equals("M-Metros cubicos") || unidade.contentEquals("g - Gramas")) {
 			return 1;
 		}
-		if(unidade.equals("DM-Decimetros") || unidade.equals("DG")) {
+		if(unidade.equals("DM-Decimetros") || unidade.equals("DM-Decimetros quadrados") || unidade.equals("DM-Decimetros cubicos") || unidade.contentEquals("dg - Decigramas")) {
 			return DM_P_MT;
 		}
-		if(unidade.equals("CM-Centimetros") || unidade.equals("CG")) {
+		if(unidade.equals("CM-Centimetros") || unidade.equals("CM-Centimetros quadrados") || unidade.equals("CM-Centimetros cubicos") || unidade.contentEquals("cg - Centigramas")) {
 			return CM_P_MT;
 		}
-		if(unidade.equals("MM-Milimetros") || unidade.equals("MG")) {
+		if(unidade.equals("MM-Milimetros") || unidade.equals("MM-Milimetros quadrados") || unidade.equals("MM-Milimetros cubicos") || unidade.contentEquals("mg - Miligramas")) {
 			return MM_P_MT;
 		}
-		if(unidade.equals("UM-Micrometros")) {
+		if(unidade.equals("UM-Micrometros") || unidade.equals("UM-Micrometros quadrados") || unidade.equals("UM-Micrometros cubicos")) {
 			return UM_P_MT;
 		}
 		if(unidade.equals("ML-Milhas")) {
@@ -104,48 +106,6 @@ public class Calculos {
 		return 0;
 	}
 	
-	public String UName(String unidade) {
-		if(unidade.equals("KM")) {
-			return "kilometros";
-		}
-		if(unidade.equals("HM")) {
-			return "Hect√¢metros";
-		}
-		if(unidade.equals("DAM")) {
-			return "Dec√¢metros";
-		}
-		if(unidade.equals("M")) {
-			return "Metros";
-		}
-		if(unidade.equals("DM")) {
-			return "Dec√≠metros";
-		}
-		if(unidade.equals("CM")) {
-			return "Centr√≠metros";
-		}
-		if(unidade.equals("MM")) {
-			return "Mil√≠metros";
-		}
-		if(unidade.equals("UM")) {
-			return "Micr√¥metros";
-		}
-		if(unidade.equals("ML")) {
-			return "Milhas";
-		}
-		if(unidade.equals("JD")) {
-			return "Jardas";
-		}
-		if(unidade.equals("PE")) {
-			return "P√©s";
-		}
-		if(unidade.equals("PL")) {
-			return "Polegadas";
-		}
-		if(unidade.equals("AL")) {
-			return "Anos luz";
-		}
-		
-		return null;
 	}
 	
-}
+

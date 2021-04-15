@@ -18,8 +18,12 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import com.scm.back.Calculos;
+
 public class DistScreen extends JFrame {
 	private JPanel contentPane;
+	
+	static Calculos calc = new Calculos();
 	
 	private JTextField textFieldO;
 	private JComboBox comboBoxD;
@@ -27,6 +31,7 @@ public class DistScreen extends JFrame {
 	private JButton converterButton;
 	private JLabel textD;
 	private JLabel titulo;
+	private double fator;
 	/**
 	 * Launch the application.
 	 */
@@ -65,13 +70,13 @@ public class DistScreen extends JFrame {
 		
 		JComboBox comboBoxO = new JComboBox();
 		comboBoxO.setFont(new Font("Tahoma", Font.BOLD, 16));
-		comboBoxO.setModel(new DefaultComboBoxModel(new String[] {"UM-Micrometros", "MM-Milimetros", "CM-Centimetros", "DM-Decimetros", "M-Metros", "DAM-Decametros", "HM-Hectametros", "KM-Quilometros"}));
+		comboBoxO.setModel(new DefaultComboBoxModel(new String[] {"UM-Micrometros", "MM-Milimetros", "CM-Centimetros", "DM-Decimetros", "M-Metros", "DAM-Decametros", "HM-Hectametros", "KM-Quilometros", "AL-Anos Luz", "ML-Milhas\t\t", "JD-Jardas\t", "PE-Pes\t\t", "PL-Polegadas"}));
 		comboBoxO.setBounds(50, 130, 320, 40);
 		contentPane.add(comboBoxO);
 		
 		comboBoxD = new JComboBox();
 		comboBoxD.setFont(new Font("Tahoma", Font.BOLD, 16));
-		comboBoxD.setModel(new DefaultComboBoxModel(new String[] {"UM-Micrometros", "MM-Milimetros", "CM-Centimetros", "DM-Decimetros", "M-Metros", "DAM-Decametros", "HM-Hectametros", "KM-Quilometros"}));
+		comboBoxD.setModel(new DefaultComboBoxModel(new String[] {"UM-Micrometros", "MM-Milimetros", "CM-Centimetros", "DM-Decimetros", "M-Metros", "DAM-Decametros", "HM-Hectametros", "KM-Quilometros", "AL-Anos Luz", "ML-Milhas\t\t", "JD-Jardas\t", "PE-Pes\t\t", "PL-Polegadas"}));
 		comboBoxD.setBounds(50, 280, 320, 40);
 		contentPane.add(comboBoxD);
 		
@@ -93,7 +98,19 @@ public class DistScreen extends JFrame {
 		converterButton = new JButton("Converter");//------------------------BOTÃO DE CONVERTER
 		converterButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			
+				String arboxO = (String)comboBoxO.getSelectedItem();
+				String arboxD = (String)comboBoxD.getSelectedItem();
+				
+				double medida = Double.parseDouble(textFieldO.getText());
+				
+				fator = calc.UMedida(arboxO);
+				double emMetros = calc.pMetros(medida, fator);
+				
+				fator = calc.UMedida(arboxD);
+				
+				double mFinal = calc.dMetros(emMetros, fator);
+				//System.out.println(mFinal);
+				textFieldD.setText(calc.arredondar(mFinal));
 			}
 		});
 		converterButton.setFont(new Font("Tahoma", Font.BOLD, 16));
