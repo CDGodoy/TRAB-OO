@@ -22,14 +22,14 @@ import java.awt.SystemColor;
 public class AreaScreen extends JFrame {
 
         static Calculos calc = new Calculos();
+        private double fator;
+        
         private JPanel contentPane;
-
         private JTextField textFieldO;
         private JComboBox comboBoxD;
         private JTextField textFieldD;
         private JButton converterButton;
         private JLabel textD;
-        private double fator;
         private JLabel titulo;
         /**
          * Launch the application.

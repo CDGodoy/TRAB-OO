@@ -19,15 +19,17 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class MassScreen extends JFrame {
-        private JPanel contentPane;
+        
         static Calculos calc = new Calculos();
+        private double fator;
+        
+        private JPanel contentPane;
         private JTextField textFieldO;
         private JComboBox comboBoxD;
         private JTextField textFieldD;
         private JButton converterButton;
         private JLabel textD;
         private JLabel titulo;
-        private double fator;
         /**
          * Launch the application.
          */

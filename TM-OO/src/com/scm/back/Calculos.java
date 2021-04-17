@@ -63,6 +63,7 @@ public class Calculos {
 	}
 	
 	public double UMedida (String unidade) {
+
 		if(unidade.equals("KM-Quilometros") || unidade.equals("KM-Quilometros quadrados") || unidade.equals("KM-Quilometros cubicos") || unidade.contentEquals("kg - Quilogramas")) {
 			return KM_P_MT;
 		}
@@ -99,7 +100,7 @@ public class Calculos {
 		if(unidade.equals("PL-Polegadas")) {
 			return PL_P_MT;
 		}
-		if(unidade.equals("AL-AnosLuz")) {
+		if(unidade.equals("AL-Anos Luz")) {
 			return AL_P_MT;
 		}
 		

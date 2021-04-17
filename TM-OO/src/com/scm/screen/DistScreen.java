@@ -23,14 +23,14 @@ public class DistScreen extends JFrame {
         private JPanel contentPane;
 
         static Calculos calc = new Calculos();
-
+        private double fator;
+        
         private JTextField textFieldO;
         private JComboBox comboBoxD;
         private JTextField textFieldD;
         private JButton converterButton;
         private JLabel textD;
         private JLabel titulo;
-        private double fator;
         /**
          * Launch the application.
          */
@@ -129,7 +129,7 @@ public class DistScreen extends JFrame {
                                 String arboxD = (String) comboBoxD.getSelectedItem();
 
                                 double medida = Double.parseDouble(textFieldO.getText());
-
+                                
                                 fator = calc.UMedida(arboxO);
                                 double emMetros = calc.pMetros(medida, fator);
 

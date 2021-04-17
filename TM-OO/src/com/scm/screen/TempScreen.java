@@ -23,14 +23,15 @@ public class TempScreen extends JFrame {
         private JPanel contentPane;
 
         static Calculos calc = new Calculos();
-
+        private double fator;
+        
         private JTextField textFieldO;
         private JComboBox comboBoxD;
         private JTextField textFieldD;
         private JButton converterButton;
         private JLabel textD;
         private JLabel titulo;
-        private double fator;
+
         /**
          * Launch the application.
          */
