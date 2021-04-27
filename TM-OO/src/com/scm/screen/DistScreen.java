@@ -18,7 +18,10 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.scm.back.Calculos;
-
+/**
+ * Contém a tela de conversão de distância
+ * @author Carlos Daniel de Godoy Barros Nascimento & José Luís Ramos Teixeira
+ */
 public class DistScreen extends JFrame {
         private JPanel contentPane;
 
@@ -32,7 +35,7 @@ public class DistScreen extends JFrame {
         private JLabel textD;
         private JLabel titulo;
         /**
-         * Launch the application.
+         * Inicia a tela.
          */
         public static void main(String[] args) {
                 EventQueue.invokeLater(new Runnable() {
@@ -48,7 +51,14 @@ public class DistScreen extends JFrame {
         }
 
         /**
-         * Create the frame.
+         * Cria a janela de distância e executa as operações
+         * Neste método, são recebidas as unidades de origem e destino e também é recebido o valor a ser convertido
+         * Após o clique do botão, são chamadas os seguintes métodos passando os devidos parâmetros:
+         * (1) UMedida @see {@link com.scm.back.Calculos#UMedida(String)} Retorna seu valor
+         * (2) pMetros @see {@link com.scm.back.Calculos#pMetros(double, double)} Converte a medida para Metros
+         * (3) UMedida @see {@link com.scm.back.Calculos#UMedida(String)} Retorna seu valor
+         * (4) pMetros @see {@link com.scm.back.Calculos#dMetros(double, double)} Converte a medida para a unidade destino
+         * (5) arredondar @see {@link com.scm.back.Calculos#arredondar(double)} Arredonda o valor para 5 casas decimais
          */
         public DistScreen() {
                 setResizable(false);
@@ -78,10 +88,10 @@ public class DistScreen extends JFrame {
                         "DAM-Decametros",
                         "HM-Hectametros",
                         "KM-Quilometros",
-                        "AL-Anos Luz",
-                        "ML-Milhas\t\t",
-                        "JD-Jardas\t",
-                        "PE-Pes\t\t",
+                        "AL-Anos_Luz",
+                        "ML-Milhas",
+                        "JD-Jardas",
+                        "PE-Pes",
                         "PL-Polegadas"
                 }));
                 comboBoxO.setBounds(50, 130, 320, 40);
@@ -98,10 +108,10 @@ public class DistScreen extends JFrame {
                         "DAM-Decametros",
                         "HM-Hectametros",
                         "KM-Quilometros",
-                        "AL-Anos Luz",
-                        "ML-Milhas\t\t",
-                        "JD-Jardas\t",
-                        "PE-Pes\t\t",
+                        "AL-Anos_Luz",
+                        "ML-Milhas",
+                        "JD-Jardas",
+                        "PE-Pes",
                         "PL-Polegadas"
                 }));
                 comboBoxD.setBounds(50, 280, 320, 40);
@@ -125,19 +135,18 @@ public class DistScreen extends JFrame {
                 converterButton = new JButton("Converter"); //------------------------BOTÃO DE CONVERTER
                 converterButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                String arboxO = (String) comboBoxO.getSelectedItem();
+                                String arboxO = (String) comboBoxO.getSelectedItem(); //Obtem as unidades selecionadas
                                 String arboxD = (String) comboBoxD.getSelectedItem();
 
-                                double medida = Double.parseDouble(textFieldO.getText());
+                                double medida = Double.parseDouble(textFieldO.getText()); //Obtem a medida de origem
                                 
-                                fator = calc.UMedida(arboxO);
-                                double emMetros = calc.pMetros(medida, fator);
+                                fator = calc.UMedida(arboxO); //Obtém o fator de conversão
+                                double emMetros = calc.pMetros(medida, fator);//Converte para metros
 
-                                fator = calc.UMedida(arboxD);
-
-                                double mFinal = calc.dMetros(emMetros, fator);
-                                //System.out.println(mFinal);
-                                textFieldD.setText(calc.arredondar(mFinal));
+                                fator = calc.UMedida(arboxD);//Obtém o fator de conversão
+                                double mFinal = calc.dMetros(emMetros, fator);//Converte para a unidade de destino
+                
+                                textFieldD.setText(calc.arredondar(mFinal));//Exibe o resultado final arredondado
                         }
                 });
                 converterButton.setFont(new Font("Tahoma", Font.BOLD, 16));

@@ -18,7 +18,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
+/**
+ * Contém a tela de conversão de volume
+ * @author Carlos Daniel de Godoy Barros Nascimento & José Luís Ramos Teixeira
+ */
 public class VoluScreen extends JFrame {
         private JPanel contentPane;
 
@@ -33,7 +36,7 @@ public class VoluScreen extends JFrame {
         private JLabel titulo;
 
         /**
-         * Launch the application.
+         * Inicia a tela.
          */
         public static void main(String[] args) {
                 EventQueue.invokeLater(new Runnable() {
@@ -49,7 +52,14 @@ public class VoluScreen extends JFrame {
         }
 
         /**
-         * Create the frame.
+         * Cria a janela de volume e executa as operações
+         * Neste método, são recebidas as unidades de origem e destino e também é recebido o valor a ser convertido
+         * Após o clique do botão, são chamadas os seguintes métodos passando os devidos parâmetros:
+         * (1) UMedida @see {@link com.scm.back.Calculos#UMedida(String)} Retorna seu valor elevado a terceira potência, pois se trata de uma conversão de área)
+         * (2) pMetros @see {@link com.scm.back.Calculos#pMetros(double, double)} Converte a medida para Metros
+         * (3) UMedida @see {@link com.scm.back.Calculos#UMedida(String)} Retorna seu valor elevado a terceira potência, pois se trata de uma conversão de área)
+         * (4) pMetros @see {@link com.scm.back.Calculos#dMetros(double, double)} Converte a medida para a unidade destino
+         * (5) arredondar @see {@link com.scm.back.Calculos#arredondar(double)} Arredonda o valor para 5 casas decimais
          */
         public VoluScreen() {
                 setResizable(false);
@@ -116,19 +126,18 @@ public class VoluScreen extends JFrame {
                 converterButton = new JButton("Converter"); //------------------------BOTÃO DE CONVERTER
                 converterButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                String arboxO = (String) comboBoxO.getSelectedItem();
+                                String arboxO = (String) comboBoxO.getSelectedItem();//Obtem as unidades selecionadas
                                 String arboxD = (String) comboBoxD.getSelectedItem();
 
-                                double medida = Double.parseDouble(textFieldO.getText());
+                                double medida = Double.parseDouble(textFieldO.getText());//Obtem a medida de origem
 
-                                fator = Math.pow(calc.UMedida(arboxO), 2);
-                                double emMetros = calc.pMetros(medida, fator);
+                                fator = Math.pow(calc.UMedida(arboxO), 2); //Obtém o fator de conversão elevado a segunda potencia
+                                double emMetros = calc.pMetros(medida, fator);//Converte para metros
 
-                                fator = Math.pow(calc.UMedida(arboxD), 2);
-
-                                double mFinal = calc.dMetros(emMetros, fator);
-                                //System.out.println(mFinal);
-                                textFieldD.setText(calc.arredondar(mFinal));
+                                fator = Math.pow(calc.UMedida(arboxD), 2);//Obtém o fator de conversão elevado a segunda potencia
+                                double mFinal = calc.dMetros(emMetros, fator);//Converte para a unidade de destino
+                              
+                                textFieldD.setText(calc.arredondar(mFinal)); //Exibe o resultado final arredondado
                         }
                 });
                 converterButton.setFont(new Font("Tahoma", Font.BOLD, 16));

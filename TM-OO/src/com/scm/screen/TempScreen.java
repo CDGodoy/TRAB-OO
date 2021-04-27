@@ -18,7 +18,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
+/**
+ * Contém a tela de conversão de temperatura
+ * @author Carlos Daniel de Godoy Barros Nascimento & José Luís Ramos Teixeira
+ */
 public class TempScreen extends JFrame {
         private JPanel contentPane;
 
@@ -33,7 +36,7 @@ public class TempScreen extends JFrame {
         private JLabel titulo;
 
         /**
-         * Launch the application.
+         * Inicia a tela.
          */
         public static void main(String[] args) {
                 EventQueue.invokeLater(new Runnable() {
@@ -49,7 +52,12 @@ public class TempScreen extends JFrame {
         }
 
         /**
-         * Create the frame.
+         * Cria a janela de temperatura e executa as operações
+         * Neste método, são recebidas as unidades de origem e destino e também é recebido o valor a ser convertido
+         * Após o clique do botão, são chamadas os seguintes métodos passando os devidos parâmetros:
+         * (1) CTPC @see {@link com.scm.back.Calculos#CTPC(String, double)} Convertendo a medida para celsius 
+         * (2) CTDC @see {@link com.scm.back.Calculos#CTDC(String, double)} Convertendo a medida em celsius para a unidade destino
+         * (3) arredondar @see {@link com.scm.back.Calculos#arredondar(double)} Arredonda o valor final
          */
         public TempScreen() {
                 setResizable(false);
@@ -112,15 +120,10 @@ public class TempScreen extends JFrame {
                                 String tpboxD = (String) comboBoxD.getSelectedItem();
                                 double medida = Double.parseDouble(textFieldO.getText());
 
-                                System.out.println(tpboxO + "\n");
-                                System.out.println(tpboxD + "\n");
                                 double emCelsius = calc.CTPC(tpboxO, medida); //Passando para celsius
-                                System.out.println(emCelsius + "\n");
 
                                 double tempFinal = calc.CTDC(tpboxD, emCelsius);
-                                System.out.println(tempFinal + "\n");
 
-                                //System.out.println(tempFinal);
                                 textFieldD.setText(calc.arredondar(tempFinal));
                         }
                 });

@@ -17,7 +17,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-
+/**
+ * Contém a tela de conversão de massa
+ * @author Carlos Daniel de Godoy Barros Nascimento & José Luís Ramos Teixeira
+ */
 public class MassScreen extends JFrame {
         
         static Calculos calc = new Calculos();
@@ -31,7 +34,7 @@ public class MassScreen extends JFrame {
         private JLabel textD;
         private JLabel titulo;
         /**
-         * Launch the application.
+         * Inicia a tela.
          */
         public static void main(String[] args) {
                 EventQueue.invokeLater(new Runnable() {
@@ -47,7 +50,14 @@ public class MassScreen extends JFrame {
         }
 
         /**
-         * Create the frame.
+         * Cria a janela de massa e executa as operações
+         * Neste método, são recebidas as unidades de origem e destino e também é recebido o valor a ser convertido
+         * Após o clique do botão, são chamadas os seguintes métodos passando os devidos parâmetros:
+         * (1) UMedida @see {@link com.scm.back.Calculos#UMedida(String)} Retorna seu valor
+         * (2) pMetros @see {@link com.scm.back.Calculos#pMetros(double, double)} Converte a medida para gramas
+         * (3) UMedida @see {@link com.scm.back.Calculos#UMedida(String)} Retorna seu valor
+         * (4) pMetros @see {@link com.scm.back.Calculos#dMetros(double, double)} Converte a medida para a unidade destino
+         * (5) arredondar @see {@link com.scm.back.Calculos#arredondar(double)} Arredonda o valor para 5 casas decimais
          */
         public MassScreen() {
                 setResizable(false);
@@ -114,19 +124,18 @@ public class MassScreen extends JFrame {
                 converterButton = new JButton("Converter"); //------------------------BOTÃO DE CONVERTER
                 converterButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                String arboxO = (String) comboBoxO.getSelectedItem();
+                                String arboxO = (String) comboBoxO.getSelectedItem();//Obtem as unidades selecionadas
                                 String arboxD = (String) comboBoxD.getSelectedItem();
 
-                                double medida = Double.parseDouble(textFieldO.getText());
+                                double medida = Double.parseDouble(textFieldO.getText());//Obtem a medida de origem
 
-                                fator = calc.UMedida(arboxO);
-                                double emMetros = calc.pMetros(medida, fator);
+                                fator = calc.UMedida(arboxO);//Obtém o fator de conversão 
+                                double emMetros = calc.pMetros(medida, fator);//Converte para gramas
 
-                                fator = calc.UMedida(arboxD);
+                                fator = calc.UMedida(arboxD);//Obtém o fator de conversão
+                                double mFinal = calc.dMetros(emMetros, fator);//Converte para a unidade de destino
 
-                                double mFinal = calc.dMetros(emMetros, fator);
-                                //System.out.println(mFinal);
-                                textFieldD.setText(calc.arredondar(mFinal));
+                                textFieldD.setText(calc.arredondar(mFinal));//Exibe o resultado final arredondado
 
                         }
                 });

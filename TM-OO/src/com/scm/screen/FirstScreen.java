@@ -12,12 +12,16 @@ import java.awt.SystemColor;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+/**
+ * Classe para a tela inicial da aplicação
+ * @author Carlos Daniel de Godoy Barros Nascimento & José Luís Ramos Teixeira
+ */
 public class FirstScreen {
 
         private JFrame mainFrame;
 
         /**
-         * Launch the application.
+         * Inicia a tela
          */
         public static void main(String[] args) {
                 EventQueue.invokeLater(new Runnable() {
@@ -33,14 +37,14 @@ public class FirstScreen {
         }
 
         /**
-         * Create the application.
+         * Cria a tela
          */
         public FirstScreen() {
                 initialize();
         }
 
         /**
-         * Initialize the contents of the frame.
+         * Inicializa os conteúdos da janela
          */
         void initialize() {
                 mainFrame = new JFrame();
@@ -56,7 +60,7 @@ public class FirstScreen {
                 lblNewLabel_2.setBounds(10, 110, 400, 50);
                 mainFrame.getContentPane().add(lblNewLabel_2);
 
-                JButton distButton = new JButton("Distância"); //-------------DISTÂNCIA
+                JButton distButton = new JButton("Distância"); //-------------BOTÃO DE DISTÂNCIA
                 distButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                                 mainFrame.dispose();
@@ -68,7 +72,7 @@ public class FirstScreen {
                 distButton.setBounds(130, 170, 160, 60);
                 mainFrame.getContentPane().add(distButton);
 
-                JButton areaButton = new JButton("Área"); //------------------ÁREA
+                JButton areaButton = new JButton("Área"); //------------------BOTÃO DE ÁREA
                 areaButton.setFont(new Font("Tahoma", Font.BOLD, 18));
                 areaButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
@@ -80,7 +84,7 @@ public class FirstScreen {
                 areaButton.setBounds(40, 250, 160, 60);
                 mainFrame.getContentPane().add(areaButton);
 
-                JButton voluButton = new JButton("Volume"); //---------------VOLUME
+                JButton voluButton = new JButton("Volume"); //---------------BOTÃO DE VOLUME
                 voluButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                                 mainFrame.dispose();
@@ -92,7 +96,7 @@ public class FirstScreen {
                 voluButton.setBounds(40, 330, 160, 60);
                 mainFrame.getContentPane().add(voluButton);
 
-                JButton massButton = new JButton("Massa"); //----------------MASSA
+                JButton massButton = new JButton("Massa"); //----------------BOTÃO DE MASSA
                 massButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                                 mainFrame.dispose();
@@ -104,7 +108,7 @@ public class FirstScreen {
                 massButton.setBounds(220, 250, 160, 60);
                 mainFrame.getContentPane().add(massButton);
 
-                JButton tempButton = new JButton("Temperatura"); //----------TEMPERATURA
+                JButton tempButton = new JButton("Temperatura"); //----------BOTÃO DE TEMPERATURA
                 tempButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                                 mainFrame.dispose();
